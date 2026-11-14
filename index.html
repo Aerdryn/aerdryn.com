@@ -150,6 +150,9 @@
       font-size: 0.85rem;
       color: var(--muted);
     }
+    .footer-links { margin: 0 0 8px; }
+    .footer-links a { color: var(--muted); margin: 0 10px; }
+    .footer-links a:hover, .footer-links a:focus-visible { color: var(--aer-blue); }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -187,6 +190,7 @@
   </main>
 
   <footer>
+    <p class="footer-links"><a href="/privacy/">Privacy Policy</a> <a href="/terms/">Terms of Service</a></p>
     &copy; <span id="year">2026</span> AERDRYN LLC. All rights reserved.
   </footer>
 

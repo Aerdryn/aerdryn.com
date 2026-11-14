@@ -1,0 +1,88 @@
+/* Shared styles for the legal pages (/privacy/, /terms/). Colors match index.html. */
+:root {
+  --midnight: #020d18;
+  --deep: #0D2E44;
+  --aer-blue: #5CC8F5;
+  --mist-teal: #6FBFC4;
+  --cloud: #E6ECF2;
+  --muted: #8FA6B8;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--midnight);
+  color: var(--cloud);
+  font: 400 1.0625rem/1.65 Inter, Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--aer-blue); }
+
+.site-header {
+  padding: 24px 16px;
+  text-align: center;
+  border-bottom: 1px solid rgba(230, 236, 242, 0.08);
+}
+.site-header a {
+  color: var(--cloud);
+  text-decoration: none;
+  font: 300 1.1rem Jost, Arial, sans-serif;
+  letter-spacing: 0.32em;
+}
+
+.legal {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 56px 16px 72px;
+}
+.legal h1 {
+  margin: 0 0 8px;
+  font: 300 clamp(1.6rem, 4.5vw, 2.2rem)/1.25 Jost, Arial, sans-serif;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.legal .meta { color: var(--muted); margin: 0 0 32px; font-size: 0.95rem; }
+.legal h2 {
+  margin: 44px 0 12px;
+  font: 400 1.25rem/1.35 Jost, Arial, sans-serif;
+  letter-spacing: 0.06em;
+  color: var(--cloud);
+}
+.legal h3 { margin: 24px 0 8px; font-size: 1.05rem; font-weight: 600; }
+.legal p, .legal li { color: #C3D2DE; }
+.legal ul { padding-left: 1.3em; }
+.legal li { margin: 6px 0; }
+.legal strong { color: var(--cloud); }
+
+.draft-banner {
+  margin: 0 0 32px;
+  padding: 14px 18px;
+  border: 1px solid #e0b252;
+  border-radius: 8px;
+  background: rgba(224, 178, 82, 0.1);
+  color: #f1d9a3;
+  font-size: 0.95rem;
+}
+.todo {
+  background: rgba(224, 178, 82, 0.18);
+  color: #f1d9a3;
+  padding: 0 4px;
+  border-radius: 3px;
+}
+.callout {
+  margin: 16px 0;
+  padding: 14px 18px;
+  border-left: 3px solid var(--aer-blue);
+  background: rgba(92, 200, 245, 0.07);
+}
+.callout p { margin: 0; color: var(--cloud); }
+
+footer {
+  padding: 32px 16px 40px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+  border-top: 1px solid rgba(230, 236, 242, 0.08);
+}
+.footer-links { margin: 0 0 8px; }
+.footer-links a { color: var(--muted); margin: 0 10px; }
+.footer-links a:hover, .footer-links a:focus-visible { color: var(--aer-blue); }
