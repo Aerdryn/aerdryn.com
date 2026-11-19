@@ -31,6 +31,8 @@
       --mist-teal: #6FBFC4;
       --cloud: #E6ECF2;
       --muted: #8FA6B8;
+      --gold: #E8C27A;
+      --violet: #A99BF0;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -142,7 +144,109 @@
     }
     .button:focus-visible { outline: 2px solid var(--aer-blue); outline-offset: 3px; }
 
-    #contact { border-top: 1px solid rgba(230, 236, 242, 0.08); }
+    #building, #playground, #contact { border-top: 1px solid rgba(230, 236, 242, 0.08); }
+    section.content.wide { max-width: 920px; }
+
+    /* ---- Badges ---- */
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 4px 12px; border-radius: 999px;
+      border: 1px solid rgba(111, 191, 196, 0.4);
+      color: var(--mist-teal);
+      font: 400 0.72rem Jost, Arial, sans-serif;
+      letter-spacing: 0.18em; text-transform: uppercase;
+    }
+    .badge::before {
+      content: ""; width: 6px; height: 6px; border-radius: 50%;
+      background: currentColor; box-shadow: 0 0 8px currentColor;
+    }
+    .badge.live { color: #7FE0A8; border-color: rgba(127, 224, 168, 0.4); }
+    .badge.soon { color: var(--gold); border-color: rgba(232, 194, 122, 0.4); }
+
+    /* ---- What we're building: spotlight ---- */
+    .spotlight {
+      margin: 0 auto;
+      padding: 48px 32px 32px;
+      border-radius: 24px;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(92, 200, 245, 0.14), transparent 70%),
+        #061826;
+      border: 1px solid rgba(92, 200, 245, 0.25);
+      box-shadow: 0 30px 80px -30px rgba(92, 200, 245, 0.25);
+    }
+    .logo-plate {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 18px 22px;
+      border-radius: 14px;
+      background: #fff;
+    }
+    .logo-plate img { display: block; width: min(200px, 52vw); height: auto; }
+    .spotlight h3 {
+      margin: 24px 0 12px;
+      font: 300 clamp(1.35rem, 3.4vw, 2rem)/1.3 Jost, Arial, sans-serif;
+      letter-spacing: 0.02em;
+    }
+    .spotlight p { color: #C3D2DE; max-width: 580px; margin: 0 auto; }
+    .pills {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+      margin: 28px 0 0; padding: 0; list-style: none;
+    }
+    .pills li {
+      padding: 8px 16px; border-radius: 999px;
+      background: rgba(230, 236, 242, 0.04);
+      border: 1px solid rgba(230, 236, 242, 0.08);
+      font-size: 0.9rem;
+    }
+    .partner-line {
+      margin: 28px 0 0; padding-top: 20px;
+      border-top: 1px solid rgba(230, 236, 242, 0.08);
+      font-size: 0.85rem; color: var(--muted);
+    }
+
+    /* ---- Playground: twin cards ---- */
+    .cards {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+      margin-top: 40px; text-align: left;
+    }
+    .card {
+      position: relative; overflow: hidden;
+      display: flex; flex-direction: column;
+      padding: 28px; border-radius: 20px;
+      background: #061826;
+      border: 1px solid rgba(230, 236, 242, 0.08);
+      color: inherit; text-decoration: none;
+      transition: transform .25s, border-color .25s;
+    }
+    .card::after {
+      content: ""; position: absolute; right: -80px; bottom: -140px;
+      width: 260px; height: 260px; pointer-events: none;
+      background: radial-gradient(circle, var(--glow), transparent 65%);
+    }
+    a.card:hover, a.card:focus-visible { transform: translateY(-4px); border-color: rgba(169, 155, 240, 0.5); }
+    a.card:focus-visible { outline: 2px solid var(--aer-blue); outline-offset: 3px; }
+    .card.tof { --glow: rgba(169, 155, 240, 0.22); }
+    .card.fav { --glow: rgba(232, 194, 122, 0.16); border-style: dashed; }
+    .glyph {
+      width: 56px; height: 56px; margin-bottom: 20px; border-radius: 14px;
+      display: grid; place-items: center;
+      font: 400 1.5rem Jost, Arial, sans-serif;
+    }
+    .tof .glyph { background: linear-gradient(135deg, #2b2160, #6a4fc9); color: #EDE7FF; }
+    .fav .glyph { background: linear-gradient(135deg, #5a3b12, #E8C27A); color: #FFF6E3; }
+    .card h3 { margin: 0 0 6px; font: 400 1.35rem Jost, Arial, sans-serif; letter-spacing: 0.04em; }
+    .card p { flex: 1; margin: 0 0 24px; color: #C3D2DE; font-size: 0.95rem; }
+    .card-foot {
+      display: flex; justify-content: space-between; align-items: center;
+      font: 400 0.85rem Jost, Arial, sans-serif; letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    .card-foot .go { color: var(--violet); }
+    .card-foot .later { color: var(--muted); }
+
+    @media (max-width: 680px) {
+      .cards { grid-template-columns: 1fr; }
+      .spotlight { padding: 36px 20px 24px; }
+    }
 
     footer {
       padding: 32px 16px 40px;
@@ -184,6 +288,50 @@
         from the start, and we work with each practice as its business associate. We also create
         products in other fields.
       </p>
+    </section>
+
+    <section class="content wide" id="building">
+      <h2>What we're building</h2>
+      <hr class="rule">
+      <div class="spotlight">
+        <span class="badge">Flagship · Private pilot</span>
+        <div><span class="logo-plate"><img src="/assets/airsync-nexus-logo.png" width="640" height="379"
+             alt="AirSync Nexus logo"></span></div>
+        <h3>A practice management system, grown inside a real practice</h3>
+        <p>
+          We're building AirSync Nexus, our practice management system (PMS), hand in hand with a partner clinic.
+          Every workflow is shaped by the people who use it every day, then refined before it
+          reaches anyone else.
+        </p>
+        <ul class="pills">
+          <li>Built with clinicians</li>
+          <li>HIPAA by design</li>
+          <li>Front desk to follow-up</li>
+          <li>Secure cloud</li>
+        </ul>
+        <a class="button" href="mailto:hello@aerdryn.com?subject=Practice%20management%20system">Ask about early access</a>
+        <p class="partner-line">Developed in partnership with AirSync · Airway, Sleep &amp; Bio Rejuvenation</p>
+      </div>
+    </section>
+
+    <section class="content wide" id="playground">
+      <h2>Playground</h2>
+      <hr class="rule">
+      <p class="lead">Side projects where we try ideas, ship fast and have fun.</p>
+      <div class="cards">
+        <a class="card tof" href="https://threadsoffate.aerdryn.com" target="_blank" rel="noopener">
+          <div class="glyph" aria-hidden="true">⟡</div>
+          <h3>Threads of Fate</h3>
+          <p>Choose-your-own-adventure stories, reimagined. Read, choose, and watch the story bend around you.</p>
+          <div class="card-foot"><span class="badge live">Live</span><span class="go">Play →</span></div>
+        </a>
+        <div class="card fav">
+          <div class="glyph" aria-hidden="true">★</div>
+          <h3>Faveroo</h3>
+          <p>A calmer home for everything you've saved on the web. Tidy, organized, always within reach.</p>
+          <div class="card-foot"><span class="badge soon">Coming soon</span><span class="later">Stay tuned</span></div>
+        </div>
+      </div>
     </section>
 
     <section class="content" id="contact">
