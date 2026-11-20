@@ -226,7 +226,7 @@
     a.card:hover, a.card:focus-visible { transform: translateY(-4px); border-color: rgba(169, 155, 240, 0.5); }
     a.card:focus-visible { outline: 2px solid var(--aer-blue); outline-offset: 3px; }
     .card.tof { --glow: rgba(169, 155, 240, 0.22); }
-    .card.fav { --glow: rgba(232, 194, 122, 0.16); border-style: dashed; }
+    .card.fav { --glow: rgba(232, 194, 122, 0.16); }
     .glyph {
       width: 56px; height: 56px; margin-bottom: 20px; border-radius: 14px;
       display: grid; place-items: center;
@@ -325,12 +325,12 @@
           <p>Choose-your-own-adventure stories, reimagined. Read, choose, and watch the story bend around you.</p>
           <div class="card-foot"><span class="badge live">Live</span><span class="go">Play →</span></div>
         </a>
-        <div class="card fav">
+        <a class="card fav" href="https://faveroo.aerdryn.com" target="_blank" rel="noopener">
           <div class="glyph" aria-hidden="true">★</div>
           <h3>Faveroo</h3>
-          <p>A calmer home for everything you've saved on the web. Tidy, organized, always within reach.</p>
-          <div class="card-foot"><span class="badge soon">Coming soon</span><span class="later">Stay tuned</span></div>
-        </div>
+          <p>Every favorite you ever saved, in one tidy library. Merged across your browsers, sorted, and checked for dead links.</p>
+          <div class="card-foot"><span class="badge live">Live · Preview</span><span class="go">Open →</span></div>
+        </a>
       </div>
     </section>
 
